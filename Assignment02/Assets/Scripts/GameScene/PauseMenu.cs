@@ -24,10 +24,7 @@ public class PauseMenu : MonoBehaviour {
         pauseButton.SetActive(true);
     }
 
-    public void OpenShop()
-    {
-        shopMenu.SetActive(true);
-    }
+    public void OpenShop() { shopMenu.SetActive(true); }
 
 	// Update is called once per frame
 	void Update () {
