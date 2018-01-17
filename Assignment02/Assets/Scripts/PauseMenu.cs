@@ -10,6 +10,9 @@ public class PauseMenu : MonoBehaviour {
     [SerializeField]
     GameObject pauseMenu;
 
+    [SerializeField]
+    GameObject shopMenu;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,6 +23,12 @@ public class PauseMenu : MonoBehaviour {
         pauseMenu.SetActive(false);
         pauseButton.SetActive(true);
     }
+
+    public void OpenShop()
+    {
+        shopMenu.SetActive(true);
+    }
+
 	// Update is called once per frame
 	void Update () {
 		
