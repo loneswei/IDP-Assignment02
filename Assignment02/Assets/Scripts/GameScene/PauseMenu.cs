@@ -8,10 +8,16 @@ public class PauseMenu : MonoBehaviour {
     GameObject pauseButton;
 
     [SerializeField]
-    GameObject pauseMenu;
+    GameObject pauseMenu, optionButton, quitButton;
 
     [SerializeField]
     GameObject shopMenu;
+
+    [SerializeField]
+    GameObject optionMenu;
+
+    [SerializeField]
+    GameObject confirmationQuitScreen;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +30,23 @@ public class PauseMenu : MonoBehaviour {
         pauseButton.SetActive(true);
     }
 
-    public void OpenShop() { shopMenu.SetActive(true); }
+    public void OpenShop()
+    {
+        shopMenu.SetActive(true);
+        optionButton.SetActive(false);
+        quitButton.SetActive(false);
+    }
+
+    public void OpenOption()
+    {
+        optionMenu.SetActive(true);
+        quitButton.SetActive(false);
+    }
+
+    public void OpenConfirmationQuitScreen()
+    {
+        confirmationQuitScreen.SetActive(true);
+    }
 
 	// Update is called once per frame
 	void Update () {

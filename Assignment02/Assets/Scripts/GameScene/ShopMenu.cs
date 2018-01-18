@@ -28,6 +28,9 @@ public class ShopMenu : MonoBehaviour {
     [SerializeField]
     GameObject rifle2Info;
 
+    [SerializeField]
+    GameObject optionButton, quitButton;
+
     // Use this for initialization
     void Start () {
 		
@@ -43,6 +46,9 @@ public class ShopMenu : MonoBehaviour {
         rifleMenu.SetActive(false);
         rifle1Info.SetActive(false);
         rifle2Info.SetActive(false);
+
+        optionButton.SetActive(true);
+        quitButton.SetActive(true);
     }
 
     // ============= Pistol Start =============

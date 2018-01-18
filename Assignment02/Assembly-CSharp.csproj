@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameScene\Controls.cs" />
+     <Compile Include="Assets\Scripts\GameScene\OptionMenu.cs" />
      <Compile Include="Assets\Scripts\GameScene\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\GameScene\QuitMenu.cs" />
      <Compile Include="Assets\Scripts\GameScene\ShopMenu.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MenuControls.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MissionSelectDetails.cs" />
