@@ -20,7 +20,7 @@ public class MissionSelectDetails : MonoBehaviour {
 
     public void Accept()
     {
-        //SceneManager.LoadSceneAsync("GameScene");
+        SceneManager.LoadSceneAsync("GameScene");
     }
 
     // Update is called once per frame
