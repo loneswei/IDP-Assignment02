@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\MainMenu\MenuControls.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MissionSelectDetails.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MissionSelectScreen.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\OptionScreen.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

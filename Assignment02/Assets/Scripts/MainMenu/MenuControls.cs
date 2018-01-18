@@ -7,6 +7,9 @@ public class MenuControls : MonoBehaviour {
     [SerializeField]
     GameObject playButton, missionSelectScreen;
 
+    [SerializeField]
+    GameObject optionButton, optionScreen;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,11 +18,19 @@ public class MenuControls : MonoBehaviour {
     public void Play()
     {
         playButton.SetActive(false);
+        optionButton.SetActive(false);
         missionSelectScreen.SetActive(true);
     }
 
-	// Update is called once per frame
-	void Update () {
+    public void Option()
+    {
+        playButton.SetActive(false);
+        optionButton.SetActive(false);
+        optionScreen.SetActive(true);
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }

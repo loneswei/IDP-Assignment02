@@ -5,7 +5,7 @@ using UnityEngine;
 public class MissionSelectScreen : MonoBehaviour {
 
     [SerializeField]
-    GameObject playButton, missionSelectScreen;
+    GameObject playButton, optionButton, missionSelectScreen;
 
     [SerializeField]
     GameObject levelOneDetails;
@@ -18,6 +18,7 @@ public class MissionSelectScreen : MonoBehaviour {
     public void Back()
     {
         playButton.SetActive(true);
+        optionButton.SetActive(true);
         missionSelectScreen.SetActive(false);
     }
 
