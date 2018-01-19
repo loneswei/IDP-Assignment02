@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\GameScene\BulletMove.cs" />
      <Compile Include="Assets\Scripts\GameScene\Controls.cs" />
+     <Compile Include="Assets\Scripts\GameScene\Enemy.cs" />
+     <Compile Include="Assets\Scripts\GameScene\Health.cs" />
      <Compile Include="Assets\Scripts\GameScene\JoyCtrl.cs" />
      <Compile Include="Assets\Scripts\GameScene\OptionMenu.cs" />
      <Compile Include="Assets\Scripts\GameScene\PauseMenu.cs" />
