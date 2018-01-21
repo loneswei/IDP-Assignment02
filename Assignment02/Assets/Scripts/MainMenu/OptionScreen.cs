@@ -14,26 +14,37 @@ public class OptionScreen : MonoBehaviour {
 
     public Button applyButton;
 
-    public Slider soundEffectsVolume_Slider;
     public Slider musicVolume_Slider;
+    public Slider soundEffects_Slider;
 
-    private AudioSource musicSource;
+    public AudioSource musicSource;
+    public AudioSource soundEffectSource;
 
     void Start()
     {
         musicSource = GetComponent<AudioSource>();
         musicVolume_Slider.value = PlayerPrefs.GetFloat("musicVol", 1);
+
+        soundEffectSource = GetComponent<AudioSource>();
+        soundEffects_Slider.value = PlayerPrefs.GetFloat("sfxVol", 1);
     }
 
     void Update()
     {
         musicSource.volume = musicVolume_Slider.value;
+        soundEffectSource.volume = soundEffects_Slider.value;
+    }
+
+    public void PlayOnce()
+    {
+        soundEffectSource.volume = soundEffects_Slider.value;
+        soundEffectSource.Play();
     }
 
     public void Apply()
     {
         PlayerPrefs.SetFloat("musicVol", musicVolume_Slider.value);
-        Debug.Log("Saved");
+        PlayerPrefs.SetFloat("sfxVol", soundEffects_Slider.value);
     }
 
     public void Back()

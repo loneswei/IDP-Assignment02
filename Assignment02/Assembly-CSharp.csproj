@@ -5,8 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{B8C49AC1-26B4-6F79-1853-4839C876E00A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -47,44 +46,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\GameScene\BulletInventory.cs" />
-    <Compile Include="Assets\Scripts\GameScene\BulletMove.cs" />
-    <Compile Include="Assets\Scripts\GameScene\Controls.cs" />
-    <Compile Include="Assets\Scripts\GameScene\Enemy.cs" />
-    <Compile Include="Assets\Scripts\GameScene\Health.cs" />
-    <Compile Include="Assets\Scripts\GameScene\JoyCtrl.cs" />
-    <Compile Include="Assets\Scripts\GameScene\OptionMenu.cs" />
-    <Compile Include="Assets\Scripts\GameScene\PauseMenu.cs" />
-    <Compile Include="Assets\Scripts\GameScene\PlayerFire.cs" />
-    <Compile Include="Assets\Scripts\GameScene\PlayerLook.cs" />
-    <Compile Include="Assets\Scripts\GameScene\PlayerMovements.cs" />
-    <Compile Include="Assets\Scripts\GameScene\QuitMenu.cs" />
-    <Compile Include="Assets\Scripts\GameScene\ShopMenu.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\MenuControls.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\MissionSelectDetails.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\MissionSelectScreen.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\OptionScreen.cs" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.HoloLens">
-      <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VR">
-      <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
-    </Reference>
+     <Compile Include="Assets\Scripts\GameScene\BulletInventory.cs" />
+     <Compile Include="Assets\Scripts\GameScene\BulletMove.cs" />
+     <Compile Include="Assets\Scripts\GameScene\Controls.cs" />
+     <Compile Include="Assets\Scripts\GameScene\Enemy.cs" />
+     <Compile Include="Assets\Scripts\GameScene\Health.cs" />
+     <Compile Include="Assets\Scripts\GameScene\JoyCtrl.cs" />
+     <Compile Include="Assets\Scripts\GameScene\OptionMenu.cs" />
+     <Compile Include="Assets\Scripts\GameScene\PauseMenu.cs" />
+     <Compile Include="Assets\Scripts\GameScene\PlayerFire.cs" />
+     <Compile Include="Assets\Scripts\GameScene\PlayerLook.cs" />
+     <Compile Include="Assets\Scripts\GameScene\PlayerMovements.cs" />
+     <Compile Include="Assets\Scripts\GameScene\QuitMenu.cs" />
+     <Compile Include="Assets\Scripts\GameScene\ShopMenu.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\MenuControls.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\MissionSelectDetails.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\MissionSelectScreen.cs" />
+     <Compile Include="Assets\Scripts\MainMenu\OptionScreen.cs" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>C:/Users/Delfhin/Documents/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -94,4 +93,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  
 </Project>
