@@ -23,15 +23,16 @@ public class BulletMove : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        //Health healthScript = other.GetComponent<Health>();
+        Health healthScript = other.GetComponent<Health>();
 
-        //if (healthScript != null)
-        //{
-        //    ParticleSystem thisExplosion = Instantiate(explosion, transform.position, Quaternion.identity);
-        //    thisExplosion.Play();
-        //    healthScript.AddHealth(-10);
+        if (healthScript != null)
+        {
+            //ParticleSystem thisExplosion = Instantiate(explosion, transform.position, Quaternion.identity);
+            //thisExplosion.Play();
+            healthScript.AddHealth(-10);
 
-        //}
-        //Destroy(gameObject);
+        }
+
+        Destroy(gameObject);
     }
 }
