@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\GameScene\PlayerFire.cs" />
      <Compile Include="Assets\Scripts\GameScene\PlayerLook.cs" />
      <Compile Include="Assets\Scripts\GameScene\PlayerMovements.cs" />
+     <Compile Include="Assets\Scripts\GameScene\PlayerWeapons.cs" />
      <Compile Include="Assets\Scripts\GameScene\QuitMenu.cs" />
      <Compile Include="Assets\Scripts\GameScene\Reload.cs" />
      <Compile Include="Assets\Scripts\GameScene\ShopMenu.cs" />

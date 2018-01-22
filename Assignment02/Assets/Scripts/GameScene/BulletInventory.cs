@@ -4,57 +4,105 @@ using UnityEngine;
 
 public class BulletInventory : MonoBehaviour
 {
+    //Set Primary Weapons
+    [SerializeField]
+    int PriMaxMag = 30;
 
     [SerializeField]
-    int MagBullets = 30;
+    int PriTotalBullets = 270;
+
+    int PriMagBullets = 30;
+
+    //Set Secondary Weapons
+    [SerializeField]
+    int SecMaxMag = 12;
 
     [SerializeField]
-    int TotalBullets = 270;
+    int SecTotalBullets = 60;
 
-    int MaxMag = 30;
+    int SecMagBullets = 12;
+
     // Use this for initialization
     void Start()
     {
 
     }
 
-    public bool ShootBullet(int amount)
+    //Primary
+    public bool ShootPrimary(int amount)
     {
-        MagBullets -= amount;
+        PriMagBullets -= amount;
 
         // out of bullets
-        if (MagBullets < 0)
+        if (PriMagBullets < 0)
             return false;
         else
             return true;
     }
 
-    public int GetCurrMag()
+    public int GetPriCurrMag()
     {
-        return MagBullets;
+        return PriMagBullets;
     }
 
-    public int GetMaxMag()
+    public int GetPriMaxMag()
     {
-        return MaxMag;
+        return PriMaxMag;
     }
 
 
-    public void SetCurrMag(int set)
+    public void SetPriCurrMag(int set)
     {
-        MagBullets = set;
+        PriMagBullets = set;
     }
 
-    public int GetAmmoStore()
+    public int GetPriAmmoStore()
     {
-        return TotalBullets;
+        return PriTotalBullets;
     }
 
-    public void AddAmmoStore(int amt)
+    public void AddPriAmmoStore(int amt)
     {
-        TotalBullets += amt;
+        PriTotalBullets += amt;
     }
 
+    //Secondary
+    public bool ShootSecondary(int amount)
+    {
+        SecMagBullets -= amount;
+
+        // out of bullets
+        if (SecMagBullets < 0)
+            return false;
+        else
+            return true;
+    }
+
+    public int GetSecCurrMag()
+    {
+        return SecMagBullets;
+    }
+
+    public int GetSecMaxMag()
+    {
+        return SecMaxMag;
+    }
+
+
+    public void SetSecCurrMag(int set)
+    {
+        SecMagBullets = set;
+    }
+
+    public int GetSecAmmoStore()
+    {
+        return SecTotalBullets;
+    }
+
+    public void AddSecAmmoStore(int amt)
+    {
+        SecTotalBullets += amt;
+    }
     // Update is called once per frame
     void Update()
     {

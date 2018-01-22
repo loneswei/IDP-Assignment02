@@ -31,10 +31,22 @@ public class PlayerFire : MonoBehaviour
     public void Fire()
     {
         BulletInventory bullets = GetComponent<BulletInventory>();
+        PlayerWeapons weapons = GetComponent<PlayerWeapons>();
 
-        if (bullets.ShootBullet(1))
+        if (weapons.GetCurrWeaponType() == "Primary")
         {
-            SpawnBullet();
+            if (bullets.ShootPrimary(1))
+            {
+                SpawnBullet();
+            }
         }
+        if (weapons.GetCurrWeaponType() == "Secondary")
+        {
+            if (bullets.ShootSecondary(1))
+            {
+                SpawnBullet();
+            }
+        }
+
     }
 }
