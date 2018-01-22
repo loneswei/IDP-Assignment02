@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
 {
-
     [SerializeField]
     GameObject bulletObj;
+
     // Use this for initialization
     void Start()
     {
@@ -28,7 +28,7 @@ public class PlayerFire : MonoBehaviour
         Instantiate(bulletObj, transform.position, transform.rotation);
     }
 
-    private void Fire()
+    public void Fire()
     {
         BulletInventory bullets = GetComponent<BulletInventory>();
 
