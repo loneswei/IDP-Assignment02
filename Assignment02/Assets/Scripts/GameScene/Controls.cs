@@ -19,6 +19,7 @@ public class Controls : MonoBehaviour {
     {
         pauseButton.SetActive(false);
         pauseMenu.SetActive(true);
+        Time.timeScale = 0.0f;
     }
 
 	// Update is called once per frame

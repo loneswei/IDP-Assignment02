@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour {
     {
         pauseMenu.SetActive(false);
         pauseButton.SetActive(true);
+        Time.timeScale = 1.0f;
     }
 
     public void OpenShop()

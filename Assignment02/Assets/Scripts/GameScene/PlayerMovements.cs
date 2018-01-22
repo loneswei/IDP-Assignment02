@@ -21,13 +21,13 @@ public class PlayerMovements : MonoBehaviour
 
     void Awake()
     {
-        Debug.Log("Awake");
+        //Debug.Log("Awake");
     }
 
     // Use this for initialization
     void Start()
     {
-        Debug.Log("Start");
+        //Debug.Log("Start");
         yAxis = new Vector3(0, 1, 0);
     }
 
@@ -56,6 +56,6 @@ public class PlayerMovements : MonoBehaviour
 
     void LateUpdate()
     {
-        Debug.Log("LateUpdate");
+        //Debug.Log("LateUpdate");
     }
 }

@@ -25,14 +25,14 @@ public class BulletMove : MonoBehaviour {
     {
         Health healthScript = other.GetComponent<Health>();
 
-        if (healthScript != null)
-        {
+        //if (healthScript != null)
+        //{
             //ParticleSystem thisExplosion = Instantiate(explosion, transform.position, Quaternion.identity);
             //thisExplosion.Play();
-            healthScript.AddHealth(-10);
+            //healthScript.AddHealth(-10);
 
-        }
+        //}
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }

@@ -30,11 +30,18 @@ public class Enemy : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
+
         if(other.gameObject.name.Contains("Bullet"))
         {
             Health healthScript = GetComponent<Health>();
-            healthScript.AddHealth(-1.0f);
+            healthScript.AddHealth(-1f);
             Destroy(other.gameObject);
+        }
+        if(other.gameObject.name.Contains("Player"))
+        {
+            Health healthScript = other.GetComponent<Health>();
+            healthScript.AddHealth(-1f);
         }
     }
 }
