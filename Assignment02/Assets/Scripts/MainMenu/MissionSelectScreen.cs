@@ -8,7 +8,7 @@ public class MissionSelectScreen : MonoBehaviour {
     GameObject playButton, optionButton, missionSelectScreen;
 
     [SerializeField]
-    GameObject levelOneDetails;
+    GameObject levelOneDetails, levelOneDetailsScreen, acceptButton, declineButton;
 
     // Use this for initialization
     void Start () {
@@ -25,6 +25,9 @@ public class MissionSelectScreen : MonoBehaviour {
     public void LevelOneDetails()
     {
         levelOneDetails.SetActive(true);
+        levelOneDetailsScreen.SetActive(true);
+        acceptButton.SetActive(true);
+        declineButton.SetActive(true);
     }
 
     // Update is called once per frame

@@ -6,16 +6,21 @@ using UnityEngine.SceneManagement;
 public class MissionSelectDetails : MonoBehaviour {
 
     [SerializeField]
-    GameObject levelOneDetails;
+    GameObject levelOneDetails, levelOneScreen, acceptButton, declineButton, levelOneButton;
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Start ()
+    {
+        levelOneButton.SetActive(false);
+    }
 	
     public void Decline()
     {
         levelOneDetails.SetActive(false);
+        levelOneScreen.SetActive(false);
+        acceptButton.SetActive(false);
+        declineButton.SetActive(false);
+        levelOneButton.SetActive(true);
     }
 
     public void Accept()

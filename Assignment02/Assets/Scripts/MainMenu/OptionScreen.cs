@@ -10,22 +10,25 @@ public class OptionScreen : MonoBehaviour {
     GameObject playButton, optionButton;
 
     [SerializeField]
-    GameObject optionScreen;
+    GameObject optionScreen, backButton;
+
+    [SerializeField]
+    GameObject musicBackground, soundEffects;
 
     public Button applyButton;
 
     public Slider musicVolume_Slider;
     public Slider soundEffects_Slider;
 
-    public AudioSource musicSource;
-    public AudioSource soundEffectSource;
+    private AudioSource musicSource;
+    private AudioSource soundEffectSource;
 
     void Start()
     {
-        musicSource = GetComponent<AudioSource>();
+        musicSource = musicBackground.GetComponent<AudioSource>();
         musicVolume_Slider.value = PlayerPrefs.GetFloat("musicVol", 1);
 
-        soundEffectSource = GetComponent<AudioSource>();
+        soundEffectSource = soundEffects.GetComponent<AudioSource>();
         soundEffects_Slider.value = PlayerPrefs.GetFloat("sfxVol", 1);
     }
 
@@ -33,12 +36,6 @@ public class OptionScreen : MonoBehaviour {
     {
         musicSource.volume = musicVolume_Slider.value;
         soundEffectSource.volume = soundEffects_Slider.value;
-    }
-
-    public void PlayOnce()
-    {
-        soundEffectSource.volume = soundEffects_Slider.value;
-        soundEffectSource.Play();
     }
 
     public void Apply()
@@ -49,6 +46,9 @@ public class OptionScreen : MonoBehaviour {
 
     public void Back()
     {
+        musicVolume_Slider.value = PlayerPrefs.GetFloat("musicVol", 1);
+        soundEffects_Slider.value = PlayerPrefs.GetFloat("sfxVol", 1);
+
         playButton.SetActive(true);
         optionButton.SetActive(true);
         optionScreen.SetActive(false);
