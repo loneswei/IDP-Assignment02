@@ -30,7 +30,7 @@ public class Enemy : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name);
+        //Debug.Log(other.gameObject.name);
 
         if(other.gameObject.name.Contains("Bullet"))
         {

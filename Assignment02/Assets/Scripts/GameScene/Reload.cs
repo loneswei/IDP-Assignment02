@@ -5,63 +5,54 @@ using UnityEngine;
 public class Reload : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
+	void Start(){}
 	// Update is called once per frame
-	void Update () {
-        //BulletInventory bullets = GetComponent<BulletInventory>();
-        //if (bullets.GetCurrMag() <= 0)
-        //{
-        //    ReloadCurrMag();
-        //}
-    }
+	void Update(){}
 
-    public void ReloadCurrMag()
+    public void ReloadCurrBullets()
     {
         BulletInventory bullets = GetComponent<BulletInventory>();
         PlayerWeapons weapons = GetComponent<PlayerWeapons>();
 
         if (weapons.GetCurrWeaponType() == "Primary")
         {
-            if (bullets.GetPriCurrMag() < bullets.GetPriMaxMag())
-            {
-                int temp = bullets.GetPriMaxMag() - bullets.GetPriCurrMag(); // how many bullets to load into magazine
+            // Check if need to reload
+            if (bullets.GetPriCurrBullets() < bullets.GetPriMaxBullets())
+            { 
+                // How many bullets to load
+                int BulletsToLoad = bullets.GetPriMaxBullets() - bullets.GetPriCurrBullets();
 
-                if (temp <= bullets.GetPriAmmoStore())
+                if (BulletsToLoad <= bullets.GetPriTotalBullets())
                 {
-                    bullets.SetPriCurrMag(bullets.GetPriMaxMag());
-                    bullets.AddPriAmmoStore(-temp);
+                    bullets.SetPriCurrBullets(bullets.GetPriMaxBullets());
+                    bullets.AddPriTotalBullets(-BulletsToLoad);
                 }
-
-                else if (temp > bullets.GetPriAmmoStore())
+                else
                 {
-                    bullets.SetPriCurrMag(bullets.GetPriCurrMag() + bullets.GetPriAmmoStore());
-                    bullets.AddPriAmmoStore(-(bullets.GetPriAmmoStore()));
+                    bullets.SetPriCurrBullets(bullets.GetPriCurrBullets() + bullets.GetPriTotalBullets());
+                    bullets.AddPriTotalBullets(-(bullets.GetPriTotalBullets()));
                 }
             }
         }
-
         else if (weapons.GetCurrWeaponType() == "Secondary")
         {
-            if (bullets.GetSecCurrMag() < bullets.GetSecMaxMag())
+            // Check if need to reload
+            if (bullets.GetSecCurrBullets() < bullets.GetSecMaxBullets())
             {
-                int temp = bullets.GetSecMaxMag() - bullets.GetSecCurrMag(); // how many bullets to load into magazine
+                // How many bullets to load
+                int BulletsToLoad = bullets.GetSecMaxBullets() - bullets.GetSecCurrBullets();
 
-                if (temp <= bullets.GetSecAmmoStore())
+                if (BulletsToLoad <= bullets.GetSecTotalBullets())
                 {
-                    bullets.SetSecCurrMag(bullets.GetSecMaxMag());
-                    bullets.AddSecAmmoStore(-temp);
+                    bullets.SetSecCurrBullets(bullets.GetSecMaxBullets());
+                    bullets.AddSecTotalBullets(-BulletsToLoad);
                 }
-
-                else if (temp > bullets.GetSecAmmoStore())
+                else
                 {
-                    bullets.SetSecCurrMag(bullets.GetSecCurrMag() + bullets.GetSecAmmoStore());
-                    bullets.AddSecAmmoStore(-(bullets.GetSecAmmoStore()));
+                    bullets.SetSecCurrBullets(bullets.GetSecCurrBullets() + bullets.GetSecTotalBullets());
+                    bullets.AddSecTotalBullets(-(bullets.GetSecTotalBullets()));
                 }
             }
         }
-
     }
 }

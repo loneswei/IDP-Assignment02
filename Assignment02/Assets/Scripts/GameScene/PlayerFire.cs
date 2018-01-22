@@ -8,26 +8,11 @@ public class PlayerFire : MonoBehaviour
     GameObject bulletObj;
 
     // Use this for initialization
-    void Start()
-    {
-
-    }
-
+    void Start(){}
     // Update is called once per frame
-    void Update()
-    {
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    //create a bullet
-        //    Fire();
-        //}
-    }
+    void Update(){}
 
-    public void SpawnBullet()
-    {
-        Instantiate(bulletObj, transform.position, transform.rotation);
-    }
-
+    public void SpawnBullet() { Instantiate(bulletObj, transform.position, transform.rotation); }
     public void Fire()
     {
         BulletInventory bullets = GetComponent<BulletInventory>();
