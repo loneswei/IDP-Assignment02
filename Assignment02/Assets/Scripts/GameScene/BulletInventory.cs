@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class BulletInventory : MonoBehaviour
 {
+    // Audio 
+    [SerializeField]
+    GameObject soundEffectSound;
+    private AudioSource soundEffectSource;
+
     [SerializeField]
     Text AmmoText;
     // Use this for initialization
@@ -40,6 +45,9 @@ public class BulletInventory : MonoBehaviour
 
     public bool ShootPrimary(int amt)
     {
+        soundEffectSource = soundEffectSound.GetComponent<AudioSource>();
+        soundEffectSource.volume = PlayerPrefs.GetFloat("sfxVol", 1);
+
         if (PriCurrBullets - amt <= 0)
         {
             PriCurrBullets = 0;
@@ -48,6 +56,7 @@ public class BulletInventory : MonoBehaviour
         else
         {
             PriCurrBullets -= amt;
+            soundEffectSource.Play();
             return true;
         }
     }
@@ -87,6 +96,9 @@ public class BulletInventory : MonoBehaviour
 
     public bool ShootSecondary(int amt)
     {
+        soundEffectSource = soundEffectSound.GetComponent<AudioSource>();
+        soundEffectSource.volume = PlayerPrefs.GetFloat("sfxVol", 1);
+
         if (SecCurrBullets - amt < 0)
         {
             SecCurrBullets = 0;
@@ -95,6 +107,7 @@ public class BulletInventory : MonoBehaviour
         else
         {
             SecCurrBullets -= amt;
+            soundEffectSource.Play();
             return true;
         }
     }
