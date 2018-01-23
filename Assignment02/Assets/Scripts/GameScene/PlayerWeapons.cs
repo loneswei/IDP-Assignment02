@@ -11,7 +11,7 @@ public class PlayerWeapons : MonoBehaviour {
     [SerializeField]
     Image weaponImage;
     [SerializeField]
-    Image CompactImage, DesertImage, AKImage, M4Image;
+    Sprite CompactImage, DesertImage, AKImage, M4Image;
 
     string primaryWeapon = "None";
     string secondaryWeapon = "228 Compact";
@@ -22,14 +22,9 @@ public class PlayerWeapons : MonoBehaviour {
     {
         currWepType = "Secondary";
         SetCashText();
-        SetWeaponImage();
     }
 	// Update is called once per frame
-	void Update()
-    {
-        SetCashText();
-        SetWeaponImage();
-    }
+	void Update() { SetCashText(); }
     
     public int GetCash() { return cash; }
     public void AddCash(int _cash)
@@ -40,24 +35,6 @@ public class PlayerWeapons : MonoBehaviour {
             cash += _cash;
     }
     public void SetCashText() { cashText.text = "$ " + cash.ToString(); }
-    public void SetWeaponImage()
-    {
-        switch(currWepType)
-        {
-            case "228 Compact":
-                weaponImage.sprite = CompactImage.sprite;
-                break;
-            case "Desert Eagle":
-                weaponImage.sprite = DesertImage.sprite;
-                break;
-            case "AK-47":
-                weaponImage.sprite = AKImage.sprite;
-                break;
-            case "M4A1":
-                weaponImage.sprite = M4Image.sprite;
-                break;
-        }
-    }
     public string GetCurrWeaponType() { return currWepType; }
     public string GetPriWeapon() { return primaryWeapon; }
     public void SetPriWeapon(string PriWeapon)
@@ -67,13 +44,18 @@ public class PlayerWeapons : MonoBehaviour {
         else
         {
             primaryWeapon = PriWeapon;
-            if (primaryWeapon == "AK-47" || primaryWeapon == "M4A1")
+            BulletInventory bullets = GetComponent<BulletInventory>();
+            bullets.SetPriCurrBullets(30);
+            bullets.SetPriTotalBullets(0);
+            bullets.SetPriMaxBullets(30);
+            bullets.SetPriMaxTotalBullets(90);
+
+            if (currWepType == "Primary")
             {
-                BulletInventory bullets = GetComponent<BulletInventory>();
-                bullets.SetPriCurrBullets(30);
-                bullets.SetPriTotalBullets(0);
-                bullets.SetPriMaxBullets(30);
-                bullets.SetPriMaxTotalBullets(90);
+                if (primaryWeapon == "AK-47")
+                    weaponImage.sprite = AKImage;
+                else if (primaryWeapon == "M4A1")
+                    weaponImage.sprite = M4Image;
             }
         }
     }
@@ -100,6 +82,13 @@ public class PlayerWeapons : MonoBehaviour {
                 bullets.SetSecTotalBullets(14);
                 bullets.SetSecMaxTotalBullets(35);
             }
+            if (currWepType == "Secondary")
+            {
+                if (secondaryWeapon == "228 Compact")
+                    weaponImage.sprite = CompactImage;
+                else if (secondaryWeapon == "Desert Eagle")
+                    weaponImage.sprite = DesertImage;
+            }
         }
     }
 
@@ -109,11 +98,20 @@ public class PlayerWeapons : MonoBehaviour {
         {
             if (primaryWeapon != "None")
                 currWepType = "Primary";
+
+            if (primaryWeapon == "AK-47")
+                weaponImage.sprite = AKImage;
+            else if (primaryWeapon == "M4A1")
+                weaponImage.sprite = M4Image;
         }
         else if (currWepType == "Primary")
         {
-            if (secondaryWeapon != "None")
-                currWepType = "Secondary";
+            currWepType = "Secondary";
+
+            if (secondaryWeapon == "228 Compact")
+                weaponImage.sprite = CompactImage;
+            else if (secondaryWeapon == "Desert Eagle")
+                weaponImage.sprite = DesertImage;
         }
     }
 }
