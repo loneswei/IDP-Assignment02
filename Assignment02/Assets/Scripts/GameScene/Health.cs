@@ -10,6 +10,9 @@ public class Health : MonoBehaviour {
     float healthPoints;
 
     public Image healthBar;
+
+    public GameObject WinScreen, LoseScreen;
+
 	// Use this for initialization
 	void Start () {
         healthPoints = startHealth;
@@ -24,7 +27,21 @@ public class Health : MonoBehaviour {
 
         // Die
         if (healthPoints <= 0)
-            Destroy(gameObject);
+        {
+            if(gameObject.name.Contains("Enemy"))
+            {
+                Destroy(gameObject);
+                WinScreen.SetActive(true);
+                Time.timeScale = 0.0f;
+            }
+
+            if(gameObject.name.Contains("Player"))
+            {
+                Destroy(gameObject);
+                LoseScreen.SetActive(true);
+                Time.timeScale = 0.0f;
+            }
+        }
     }
 	// Update is called once per frame
 	void Update () {
