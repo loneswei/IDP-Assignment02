@@ -19,6 +19,8 @@ public class PauseMenu : MonoBehaviour {
     [SerializeField]
     GameObject confirmationQuitScreen;
 
+    bool isPaused = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -28,6 +30,7 @@ public class PauseMenu : MonoBehaviour {
     {
         pauseButton.SetActive(false);
         pauseMenu.SetActive(true);
+        isPaused = true;
         Time.timeScale = 0.0f;
     }
 
@@ -35,6 +38,7 @@ public class PauseMenu : MonoBehaviour {
     {
         pauseMenu.SetActive(false);
         pauseButton.SetActive(true);
+        isPaused = false;
         Time.timeScale = 1.0f;
     }
 
@@ -54,6 +58,11 @@ public class PauseMenu : MonoBehaviour {
     public void OpenConfirmationQuitScreen()
     {
         confirmationQuitScreen.SetActive(true);
+    }
+
+    public bool CheckIsPaused()
+    {
+        return isPaused;
     }
 
 	// Update is called once per frame

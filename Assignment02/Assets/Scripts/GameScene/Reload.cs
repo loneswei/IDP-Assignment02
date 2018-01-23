@@ -13,8 +13,10 @@ public class Reload : MonoBehaviour {
     {
         BulletInventory bullets = GetComponent<BulletInventory>();
         PlayerWeapons weapons = GetComponent<PlayerWeapons>();
-
-        if (weapons.GetCurrWeaponType() == "Primary")
+        if (Time.timeScale == 0.0f) // if  paused, return
+            return;
+        
+            if (weapons.GetCurrWeaponType() == "Primary")
         {
             // Check if need to reload
             if (bullets.GetPriCurrBullets() < bullets.GetPriMaxBullets())

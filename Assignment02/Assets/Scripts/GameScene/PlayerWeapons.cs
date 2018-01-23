@@ -94,6 +94,9 @@ public class PlayerWeapons : MonoBehaviour {
 
     public void Switch()
     {
+        if (Time.timeScale == 0.0f) // if  paused, return
+            return;
+
         if (currWepType == "Secondary")
         {
             if (primaryWeapon != "None")

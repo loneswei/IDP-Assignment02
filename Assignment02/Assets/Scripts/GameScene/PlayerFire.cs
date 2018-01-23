@@ -8,15 +8,18 @@ public class PlayerFire : MonoBehaviour
     GameObject bulletObj;
 
     // Use this for initialization
-    void Start(){}
+    void Start() { }
     // Update is called once per frame
-    void Update(){}
+    void Update() { }
 
     public void SpawnBullet() { Instantiate(bulletObj, transform.position, transform.rotation); }
     public void Fire()
     {
         BulletInventory bullets = GetComponent<BulletInventory>();
         PlayerWeapons weapons = GetComponent<PlayerWeapons>();
+
+        if (Time.timeScale == 0.0f) // if  paused, return
+            return;
 
         if (weapons.GetCurrWeaponType() == "Primary")
         {
@@ -25,13 +28,12 @@ public class PlayerFire : MonoBehaviour
                 SpawnBullet();
             }
         }
-        if (weapons.GetCurrWeaponType() == "Secondary")
+        else if (weapons.GetCurrWeaponType() == "Secondary")
         {
             if (bullets.ShootSecondary(1))
             {
                 SpawnBullet();
             }
         }
-
     }
 }

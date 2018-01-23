@@ -20,6 +20,7 @@ public class QuitMenu : MonoBehaviour {
 
     public void Yes()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadSceneAsync("MainMenu");
     }
 
