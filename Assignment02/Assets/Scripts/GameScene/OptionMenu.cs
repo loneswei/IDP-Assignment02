@@ -9,7 +9,7 @@ public class OptionMenu : MonoBehaviour {
     GameObject optionMenu, quitButton;
 
     [SerializeField]
-    GameObject mouseClickSound, gunShotSound, gunReloadSound;
+    GameObject mouseClickSound, gunShotSound, gunReloadSound, coinsSound;
 
     [SerializeField]
     GameObject backgroundMusic;
@@ -18,7 +18,7 @@ public class OptionMenu : MonoBehaviour {
     public Slider backgroundMusic_Slider;
     public Button applyButton;
 
-    private AudioSource mouseClickSource, gunShotSource, gunReloadSource;
+    private AudioSource mouseClickSource, gunShotSource, gunReloadSource, coinsSource;
     private AudioSource backgroundMusicSource;
 
 	// Use this for initialization
@@ -27,8 +27,9 @@ public class OptionMenu : MonoBehaviour {
         mouseClickSource = mouseClickSound.GetComponent<AudioSource>();
         gunShotSource = gunShotSound.GetComponent<AudioSource>();
         gunReloadSource = gunReloadSound.GetComponent<AudioSource>();
+        coinsSource = coinsSound.GetComponent<AudioSource>();
         backgroundMusicSource = backgroundMusic.GetComponent<AudioSource>();
-
+        
 
         soundEffects_Slider.value = PlayerPrefs.GetFloat("sfxVol", 1);
         backgroundMusic_Slider.value = PlayerPrefs.GetFloat("musicVol", 1);
@@ -46,6 +47,7 @@ public class OptionMenu : MonoBehaviour {
         mouseClickSource.volume = soundEffects_Slider.value;
         gunShotSource.volume = soundEffects_Slider.value;
         gunReloadSource.volume = soundEffects_Slider.value;
+        coinsSource.volume = soundEffects_Slider.value;
 
         backgroundMusicSource.volume = backgroundMusic_Slider.value;
     }
