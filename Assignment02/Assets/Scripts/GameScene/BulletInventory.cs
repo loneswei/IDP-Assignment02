@@ -1,14 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BulletInventory : MonoBehaviour
 {
+    [SerializeField]
+    Text AmmoText;
     // Use this for initialization
-    void Start(){}
+    void Start() { SetAmmoText(); }
     // Update is called once per frame
-    void Update(){}
+    void Update() { SetAmmoText(); }
 
+    public void SetAmmoText()
+    {
+        PlayerWeapons weapon = GetComponent<PlayerWeapons>();
+        if (weapon.GetCurrWeaponType() == "Primary")
+            AmmoText.text = PriCurrBullets.ToString() + " / " + PriTotalBullets.ToString();
+        else if (weapon.GetCurrWeaponType() == "Secondary")
+            AmmoText.text = SecCurrBullets.ToString() + " / " + SecTotalBullets.ToString();
+    }
     // ================= Primary Weapon Start =================
     // Set Primary Weapons
     int PriCurrBullets;

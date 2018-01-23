@@ -8,15 +8,28 @@ public class PlayerWeapons : MonoBehaviour {
     int cash = 600;
     [SerializeField]
     Text cashText;
+    [SerializeField]
+    Image weaponImage;
+    [SerializeField]
+    Image CompactImage, DesertImage, AKImage, M4Image;
 
     string primaryWeapon = "None";
     string secondaryWeapon = "228 Compact";
     string currWepType;
 
     // Use this for initialization
-    void Start() { currWepType = "Secondary"; }
+    void Start()
+    {
+        currWepType = "Secondary";
+        SetCashText();
+        SetWeaponImage();
+    }
 	// Update is called once per frame
-	void Update(){ cashText.text = "$ " + cash; }
+	void Update()
+    {
+        SetCashText();
+        SetWeaponImage();
+    }
     
     public int GetCash() { return cash; }
     public void AddCash(int _cash)
@@ -26,7 +39,25 @@ public class PlayerWeapons : MonoBehaviour {
         else
             cash += _cash;
     }
-
+    public void SetCashText() { cashText.text = "$ " + cash.ToString(); }
+    public void SetWeaponImage()
+    {
+        switch(currWepType)
+        {
+            case "228 Compact":
+                weaponImage.sprite = CompactImage.sprite;
+                break;
+            case "Desert Eagle":
+                weaponImage.sprite = DesertImage.sprite;
+                break;
+            case "AK-47":
+                weaponImage.sprite = AKImage.sprite;
+                break;
+            case "M4A1":
+                weaponImage.sprite = M4Image.sprite;
+                break;
+        }
+    }
     public string GetCurrWeaponType() { return currWepType; }
     public string GetPriWeapon() { return primaryWeapon; }
     public void SetPriWeapon(string PriWeapon)
