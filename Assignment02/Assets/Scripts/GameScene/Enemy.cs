@@ -38,10 +38,14 @@ public class Enemy : MonoBehaviour {
             healthScript.AddHealth(-1f);
             Destroy(other.gameObject);
         }
-        if(other.gameObject.name.Contains("Player"))
+      
+    }
+    public void OnCollisionStay(Collision other)
+    {
+        if (other.gameObject.name == "Player")
         {
-            Health healthScript = other.GetComponent<Health>();
-            healthScript.AddHealth(-1f);
+            Health healthScript = other.gameObject.GetComponent<Health>();
+            healthScript.AddHealth(-0.1f);
         }
     }
 }
