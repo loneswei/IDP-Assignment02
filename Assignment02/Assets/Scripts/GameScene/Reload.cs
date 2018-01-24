@@ -31,19 +31,26 @@ public class Reload : MonoBehaviour {
                 // How many bullets to load
                 int BulletsToLoad = bullets.GetPriMaxBullets() - bullets.GetPriCurrBullets();
 
-                if (BulletsToLoad <= bullets.GetPriTotalBullets())
+                if (bullets.GetPriTotalBullets() > 0)
                 {
-                    soundEffectSource.Play();
+                    if (BulletsToLoad <= bullets.GetPriTotalBullets())
+                    {
+                        soundEffectSource.Play();
 
-                    bullets.SetPriCurrBullets(bullets.GetPriMaxBullets());
-                    bullets.AddPriTotalBullets(-BulletsToLoad);
+                        bullets.SetPriCurrBullets(bullets.GetPriMaxBullets());
+                        bullets.AddPriTotalBullets(-BulletsToLoad);
+                    }
+                    else
+                    {
+                        soundEffectSource.Play();
+
+                        bullets.SetPriCurrBullets(bullets.GetPriCurrBullets() + bullets.GetPriTotalBullets());
+                        bullets.AddPriTotalBullets(-(bullets.GetPriTotalBullets()));
+                    }
                 }
                 else
                 {
-                    soundEffectSource.Play();
-
-                    bullets.SetPriCurrBullets(bullets.GetPriCurrBullets() + bullets.GetPriTotalBullets());
-                    bullets.AddPriTotalBullets(-(bullets.GetPriTotalBullets()));
+                    //play another sound 
                 }
             }
         }
@@ -56,19 +63,26 @@ public class Reload : MonoBehaviour {
                 // How many bullets to load
                 int BulletsToLoad = bullets.GetSecMaxBullets() - bullets.GetSecCurrBullets();
 
-                if (BulletsToLoad <= bullets.GetSecTotalBullets())
+                if (bullets.GetSecTotalBullets() > 0)
                 {
-                    soundEffectSource.Play();
+                    if (BulletsToLoad <= bullets.GetSecTotalBullets())
+                    {
+                        soundEffectSource.Play();
 
-                    bullets.SetSecCurrBullets(bullets.GetSecMaxBullets());
-                    bullets.AddSecTotalBullets(-BulletsToLoad);
+                        bullets.SetSecCurrBullets(bullets.GetSecMaxBullets());
+                        bullets.AddSecTotalBullets(-BulletsToLoad);
+                    }
+                    else
+                    {
+                        soundEffectSource.Play();
+
+                        bullets.SetSecCurrBullets(bullets.GetSecCurrBullets() + bullets.GetSecTotalBullets());
+                        bullets.AddSecTotalBullets(-(bullets.GetSecTotalBullets()));
+                    }
                 }
                 else
                 {
-                    soundEffectSource.Play();
-
-                    bullets.SetSecCurrBullets(bullets.GetSecCurrBullets() + bullets.GetSecTotalBullets());
-                    bullets.AddSecTotalBullets(-(bullets.GetSecTotalBullets()));
+                    // Do not play sound / Play another sound
                 }
             }
         }

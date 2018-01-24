@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerWeapons : MonoBehaviour {
 
-    int cash = 600;
+    int cash = 100000;
     [SerializeField]
     Text cashText;
     [SerializeField]
