@@ -10,6 +10,8 @@ public class Health : MonoBehaviour {
     float healthPoints;
 
     public Image healthBar;
+    public GameObject PlayerHealthOverlay;
+    float timerToRemoveOverlay;
 
     public GameObject WinScreen, LoseScreen;
 
@@ -24,6 +26,9 @@ public class Health : MonoBehaviour {
 
         if (gameObject.name.Contains("Enemy"))
             healthBar.fillAmount = healthPoints / startHealth;
+
+        if (gameObject.name.Contains("Player"))
+            PlayerHealthOverlay.SetActive(true);
 
         // Die
         if (healthPoints <= 0)
@@ -44,7 +49,17 @@ public class Health : MonoBehaviour {
         }
     }
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+        if (gameObject.name.Contains("Player"))
+        {
+            if (PlayerHealthOverlay.activeInHierarchy)
+                timerToRemoveOverlay += Time.deltaTime;
+            if (timerToRemoveOverlay >= 1.0f)
+            {
+                PlayerHealthOverlay.SetActive(false);
+                timerToRemoveOverlay = 0.0f;
+            }
+        }
 	}
 }
